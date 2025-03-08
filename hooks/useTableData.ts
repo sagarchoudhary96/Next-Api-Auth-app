@@ -31,7 +31,7 @@ const useTableData = <T>(
 
   return {
     isLoading,
-    data,
+    data: data as T[],
     error,
   };
 };

@@ -1,6 +1,5 @@
 import { useAppDispatch, useAppSelector } from "@/lib/redux/hooks";
 import { RootState } from "@/lib/redux/store";
-import { setPagination } from "@/lib/redux/usersSlice";
 import {
   Select,
   SelectContent,
@@ -9,15 +8,20 @@ import {
   SelectValue,
 } from "../ui/select";
 import TableSearch from "./Search";
+import { Filter, TablePaginationState } from "@/lib/types";
+import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 
 const TableControls = ({
   entity,
   searchValue,
   onSearchChange,
+  onUpdatePagination,
 }: {
   entity: keyof RootState;
   searchValue: string;
   onSearchChange: (value: string) => void;
+  onUpdatePagination: ActionCreatorWithPayload<TablePaginationState, string>;
+  onUpdateFilter: ActionCreatorWithPayload<Filter, string>;
 }) => {
   const dispatch = useAppDispatch();
   const { pagination } = useAppSelector((state) => state[entity]);
@@ -28,7 +32,7 @@ const TableControls = ({
           value={`${pagination.pageSize}`}
           onValueChange={(value) =>
             dispatch(
-              setPagination({ currentPage: 1, pageSize: parseInt(value) })
+              onUpdatePagination({ currentPage: 1, pageSize: parseInt(value) })
             )
           }
         >
