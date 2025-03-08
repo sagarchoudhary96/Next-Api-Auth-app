@@ -1,3 +1,4 @@
+import BreadcrumbNav from "@/components/BreadCrumbNav";
 import { Toaster } from "@/components/ui/sonner";
 import { CloudIcon } from "lucide-react";
 import type { Metadata } from "next";
@@ -28,6 +29,7 @@ export default function RootLayout({
             <h1 className="text-xl font-bold">Astudio APP</h1>
           </div>
         </header>
+        <BreadcrumbNav />
         <main className="p-4 flex-1 flex flex-col overflow-hidden">
           {children}
         </main>
