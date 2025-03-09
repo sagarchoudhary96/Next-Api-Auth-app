@@ -1,6 +1,6 @@
 import TableControls from "@/components/TableControls";
 import { RootState } from "@/lib/redux/store";
-import { Filter, TableColumn, TablePaginationState } from "@/lib/types";
+import { Filter, TableColumn, TableFilterType, TablePaginationState } from "@/lib/types";
 import { searchValueInRow } from "@/lib/utils";
 import { Loader2Icon } from "lucide-react";
 import { useState } from "react";
@@ -18,6 +18,7 @@ import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 // Define a generic type for data field which can be passed when TableView component is called
 type TableViewProps<T extends { id: string | number }> = {
   columns: TableColumn<T>[];
+  filters: TableFilterType[];
   data: T[];
   entity: keyof RootState;
   isLoading?: boolean;
@@ -26,6 +27,7 @@ type TableViewProps<T extends { id: string | number }> = {
 };
 const TableView = <T extends { id: string | number }>({
   columns,
+  filters,
   data,
   entity,
   isLoading,
@@ -44,6 +46,7 @@ const TableView = <T extends { id: string | number }>({
         onSearchChange={setSearch}
         onUpdateFilter={onUpdateFilter}
         onUpdatePagination={onUpdatePagination}
+        filters={filters}
       />
       <div className="flex-1 w-full overflow-auto relative">
         <Table className="border">

@@ -9,20 +9,28 @@ import {
   TablePaginationState,
   User,
 } from "../types";
+import { EntityType } from "../constants";
 
+/**
+ * Fetch users from the API
+ * @param limit - Number of items per page
+ * @param page - Current page number
+ * @param filter - Filter object
+ * @returns Users data and total pages
+ */
 export const fetchUsers = createAsyncThunk<
   FetchActionResponse<User>,
   FetchActionParams
 >("users/fetchUsers", async ({ limit, page, filter }: FetchActionParams) => {
-  let url = `https://dummyjson.com/users?limit=${limit}&skip=${
-    (page - 1) * limit
-  }`;
+  let url = `https://dummyjson.com/users`;
 
   if (filter?.key && filter?.value) {
-    url = `https://dummyjson.com/users/filter?key=${filter.key}&value=${
-      filter.value
-    }&limit=${limit}&skip=${(page - 1) * limit}`;
+    url += `/filter?key=${filter.key}&value=${filter.value}&`;
+  } else {
+    url += `?`;
   }
+
+  url += `limit=${limit}&skip=${(page - 1) * limit}`;
 
   const response = await axios.get(url);
   return {
@@ -46,8 +54,13 @@ const initialState: SliceState<User> = {
   },
 };
 
+/**
+ * Users slice to handle users data
+ * Contains reducers and extra reducers for fetching users
+ * Also contains reducers for setting pagination and filter
+ */
 const usersSlice = createSlice({
-  name: "users",
+  name: EntityType.Users,
   initialState,
   reducers: {
     setPagination: (state, action: PayloadAction<TablePaginationState>) => {

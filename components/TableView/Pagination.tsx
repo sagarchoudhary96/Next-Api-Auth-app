@@ -59,6 +59,7 @@ const TablePagination = ({
               })
             )
           }
+          className="bg-blue hover:bg-blue/80 text-black"
           disabled={pagination.currentPage === 1}
         >
           <ChevronLeftIcon />
@@ -87,6 +88,11 @@ const TablePagination = ({
           <Button
             key={page}
             variant={pagination.currentPage === page ? "default" : "outline"}
+            className={
+              pagination.currentPage === page
+                ? "bg-blue hover:bg-blue/80 text-black"
+                : ""
+            }
             onClick={() =>
               dispatch(
                 onUpdatePagination({
@@ -110,6 +116,7 @@ const TablePagination = ({
               })
             )
           }
+          className="bg-blue hover:bg-blue/80 text-black"
           disabled={pagination.currentPage === totalPages}
         >
           <ChevronRightIcon />

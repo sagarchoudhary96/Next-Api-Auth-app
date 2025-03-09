@@ -1,24 +1,19 @@
-export enum InputFieldType {
-  Text = "text",
-  Paragraph = "paragraph",
-  Checkbox = "checkbox",
-  Select = "select",
-}
-
-export type FormInputField = {
-  type: InputFieldType;
-  label: string;
-  required: boolean;
-  key: string;
-  value?: string;
-};
-
 export enum RequestStatus {
   Idle = "idle",
   Loading = "loading",
   Success = "success",
   Error = "error",
 }
+
+export enum FilterTypes {
+  TEXT = "text",
+  SELECT = "select",
+}
+
+export type SelectOption = {
+  label: string;
+  value: string;
+};
 
 // table column with key, title field and any number of fields which can have value of any type
 export type TableColumn<T> = {
@@ -80,3 +75,26 @@ export interface FetchActionResponse<T> {
   data: T[];
   totalPages: number;
 }
+
+export type Product = {
+  id: number;
+  title: string;
+  category: string;
+  price: number;
+  rating: number;
+  stock: number;
+  brand: string;
+  sku: string;
+  warrantyInformation: string;
+  shippingInformation: string;
+  availabilityStatus: string;
+  returnPolicy: string;
+  minimumOrderQuantity: number;
+};
+
+export type TableFilterType = {
+  key: string;
+  label: string;
+  type: FilterTypes;
+  options?: SelectOption[];
+};

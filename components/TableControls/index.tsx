@@ -8,17 +8,21 @@ import {
   SelectValue,
 } from "../ui/select";
 import TableSearch from "./Search";
-import { Filter, TablePaginationState } from "@/lib/types";
+import { Filter, TableFilterType, TablePaginationState } from "@/lib/types";
 import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
+import TableFilters from "./Filters";
 
 const TableControls = ({
   entity,
   searchValue,
   onSearchChange,
   onUpdatePagination,
+  onUpdateFilter,
+  filters,
 }: {
   entity: keyof RootState;
   searchValue: string;
+  filters: TableFilterType[];
   onSearchChange: (value: string) => void;
   onUpdatePagination: ActionCreatorWithPayload<TablePaginationState, string>;
   onUpdateFilter: ActionCreatorWithPayload<Filter, string>;
@@ -49,6 +53,13 @@ const TableControls = ({
         <span className="text-sm font-semibold whitespace-nowrap">Entries</span>
       </div>
       <TableSearch value={searchValue} onChange={onSearchChange} />
+      {!!filters.length && (
+        <TableFilters
+          entity={entity}
+          filters={filters}
+          onUpdateFilter={onUpdateFilter}
+        />
+      )}
     </div>
   );
 };

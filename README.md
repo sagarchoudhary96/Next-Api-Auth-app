@@ -1,8 +1,9 @@
-# Form App
+# Astudio App
 
 ## [Live Version]()
 
-A form App
+Assesment App for Astudio
+
 ## Requirements
 
 - yarn
@@ -15,16 +16,17 @@ A form App
 
 ## How to run:
 
-1. [Download]() or [Clone]() the Repository.
+1. Dowload the Repository.
+
 2. Run `yarn install` to install the project dependencies.
 
 3. Run `yarn dev` to run the app in development mode.
 
 4. App can be seen at: [http://localhost:3000](http://localhost:3000).
 
-
 ## Functionalities
-* An App implementing form
+
+- An App implementing Users and products tab allowing filters and paginations and client-side search
 
 ## Learn More
 

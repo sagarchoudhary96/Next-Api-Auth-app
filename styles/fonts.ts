@@ -1,5 +1,8 @@
 import localFont from "next/font/local";
 
+/**
+ * Neutraface Text font
+ */
 const neutraText = localFont({
   src: [
     {
