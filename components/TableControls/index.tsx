@@ -30,7 +30,7 @@ const TableControls = ({
   const dispatch = useAppDispatch();
   const { pagination } = useAppSelector((state) => state[entity]);
   return (
-    <div className="flex flex-row gap-2 mb-4 flex-wrap">
+    <div className="flex flex-row gap-2 items-center mb-4 flex-wrap">
       <div className="items-center flex gap-2 p-1">
         <Select
           value={`${pagination.pageSize}`}
