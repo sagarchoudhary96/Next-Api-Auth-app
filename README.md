@@ -26,7 +26,8 @@ Assesment App for Astudio
 
 ## Functionalities
 
-- An App implementing Users and products tab allowing filters and paginations and client-side search
+- An App implementing Users and products allowing filters and paginations and client-side search.
+- Uses [DummyJson](https://dummyjson.com/) for data mock.
 
 ## Learn More
 

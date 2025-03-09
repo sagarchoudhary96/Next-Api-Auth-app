@@ -32,7 +32,7 @@ const TableFilters = ({
     dispatch(onUpdateFilter(updatedValues));
   }, 1000);
   return (
-    <div className="flex items-center gap-3">
+    <>
       {filters.map((filterConfig) =>
         filterConfig.type === FilterTypes.SELECT ? (
           <Select
@@ -42,7 +42,7 @@ const TableFilters = ({
               dispatch(onUpdateFilter({ key: filterConfig.key, value }))
             }
           >
-            <SelectTrigger>
+            <SelectTrigger className="w-fit">
               <SelectValue placeholder={filterConfig.label} />
             </SelectTrigger>
             <SelectContent>
@@ -86,7 +86,7 @@ const TableFilters = ({
           Clear Filters
         </Button>
       )}
-    </div>
+    </>
   );
 };
 
