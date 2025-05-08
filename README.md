@@ -1,8 +1,8 @@
-# Astudio App
+# Assignment App
 
-## [Live Version](https://astudio-assesment.vercel.app)
+## [Live Version](https://assignment-app-xi.vercel.app)
 
-Assesment App for Astudio
+Assesment App for Microvision
 
 ## Requirements
 

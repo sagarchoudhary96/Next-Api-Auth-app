@@ -6,6 +6,13 @@ import {
   User,
 } from "./types";
 
+export const PAGE_TITLES: Record<string, string> = {
+  "/users": "Users",
+  "/products": "Products",
+  "/": "Home",
+};
+
+export const PROTECTED_ROUTES = ["/users"];
 export const USER_TABLE_COLUMNS: TableColumn<User>[] = [
   {
     key: "firstName",
