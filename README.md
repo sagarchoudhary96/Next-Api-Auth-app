@@ -4,6 +4,11 @@
 
 Assesment App for Microvision
 
+Login Creds for protected routes:
+
+email: test@example.com <br/>
+password: password123
+
 ## Requirements
 
 - yarn
