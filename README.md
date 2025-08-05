@@ -1,8 +1,8 @@
-# Assignment App
+# Next API Auth App
 
-## [Live Version](https://assignment-app-xi.vercel.app)
+## [Live Version](https://next-api-auth-app.vercel.app/)
 
-Assesment App for Microvision
+An App built using Next.JS to showcase use of middleware and implementing auth and using mock api to show Data and be able to filter using the dummy api server.
 
 Login Creds for protected routes:
 

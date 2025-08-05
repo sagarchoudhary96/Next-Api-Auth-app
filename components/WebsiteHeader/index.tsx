@@ -31,7 +31,7 @@ export default function WebsiteHeader() {
     <header className="flex justify-between items-center mb-2 p-4">
       <div className="flex items-center gap-2">
         <CloudIcon className="w-8 h-8 bg-black text-white p-1.5 rounded-lg" />
-        <h1 className="text-xl font-bold">Assignment App</h1>
+        <h1 className="text-xl font-bold">Next Auth API App</h1>
       </div>
       <Button
         variant="outline"

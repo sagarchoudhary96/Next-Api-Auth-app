@@ -9,7 +9,7 @@ import BreadcrumbNav from "@/components/BreadCrumbNav";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Assignment App",
+  title: "Next Auth API App",
 };
 
 export default function RootLayout({
